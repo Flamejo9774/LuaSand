@@ -1,7 +1,7 @@
 # LuaSand
 a Falling Sand Game using Lua and Löve2d
 
-## Blocks
+# Blocks
 Sand  | Sand can fall LeftDown,RightDown and down at a random speed it also sinks and is more sticky in water
 Stone | Stone is a Strong Material that doesnt Fall or Burn but at a temperature of 2000°C it Turns Into Lava(Liquid Stone)
 Water | Water falls the same as Sand plus Left and Right when water is above a temperature of 100°C it begins to boil
@@ -12,7 +12,7 @@ Steam | Steam is created when Water Boils and if it cools it turns back to Water
 Lava  | Lava is like water but Slower and WAYYY Hotter
 Coal  | Coal Can burn and is created by Wood(CharCoal)
 
-## Keybinds
+# Keybinds
   Space        | Pause the Sim
   F            | Manually Tick the Sim
   D            | Debug View
