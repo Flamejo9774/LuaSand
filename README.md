@@ -29,16 +29,16 @@ Lshift+Scroll | Change the Temperature of the Brush
 
 # ScreenShots
 
-![image](https://github.com/Flamejo9774/LuaSand/assets/88045266/0a59377c-a059-4566-8383-4511127ea24e)
-![image](https://github.com/Flamejo9774/LuaSand/assets/88045266/6f0bc6be-5a74-4f16-b70c-ecdf9b8f2d5a)
-![image](https://github.com/Flamejo9774/LuaSand/assets/88045266/07aeb577-0082-4bbb-833c-216b2f7e1572)
+![image](https://github.com/Flamejo9774/LuaSand/assets/88045266/0a59377c-a059-4566-8383-4511127ea24e)  
+![image](https://github.com/Flamejo9774/LuaSand/assets/88045266/6f0bc6be-5a74-4f16-b70c-ecdf9b8f2d5a)  
+![image](https://github.com/Flamejo9774/LuaSand/assets/88045266/07aeb577-0082-4bbb-833c-216b2f7e1572)  
 
-what will heat up faster the upper or lower one
+what will heat up faster the upper or lower one  
 
-![image](https://github.com/Flamejo9774/LuaSand/assets/88045266/f316d0a7-de39-4aed-a608-f9b0dcfebe86)
+![image](https://github.com/Flamejo9774/LuaSand/assets/88045266/f316d0a7-de39-4aed-a608-f9b0dcfebe86)  
 It was the Lower one
 
-![image](https://github.com/Flamejo9774/LuaSand/assets/88045266/c69de2ae-85b4-4ae0-a1eb-861727fb03ca)
+![image](https://github.com/Flamejo9774/LuaSand/assets/88045266/c69de2ae-85b4-4ae0-a1eb-861727fb03ca)  
 
 # Later Updates
 Performance Update
