@@ -5,8 +5,7 @@ a Falling Sand Game using Lua and Löve2d
 # Blocks
 
 Sand  | Sand can fall LeftDown,RightDown and down at a random speed it also sinks and is more sticky in water  
-
-Stone | Stone is a Strong Material that doesnt Fall or Burn but at a temperature of 2000°C it Turns Into Lava(Liquid Stone)  
+Stone | Stone doesnt Fall or Burn but at a temperature of 2000°C it Turns Into Lava(Liquid Stone)  
 Water | Water falls the same as Sand plus Left and Right when water is above a temperature of 100°C it begins to boil  
 Fire  | Fire moves in all directions and releases Temperatures of 150°C(had to shrink it)  
 Wood  | Wood Is Static but Burns at a temperature of 230°C  
