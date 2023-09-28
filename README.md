@@ -27,7 +27,7 @@ RMB           | Destroy Elements and Temperature in the air
 Scroll        | Change the Brush Size  
 Lshift+Scroll | Change the Temperature of the Brush  
 
-# ScreenShots
+# ScreenShots  
 
 ![image](https://github.com/Flamejo9774/LuaSand/assets/88045266/0a59377c-a059-4566-8383-4511127ea24e)  
 ![image](https://github.com/Flamejo9774/LuaSand/assets/88045266/6f0bc6be-5a74-4f16-b70c-ecdf9b8f2d5a)  
@@ -40,18 +40,18 @@ It was the Lower one
 
 ![image](https://github.com/Flamejo9774/LuaSand/assets/88045266/c69de2ae-85b4-4ae0-a1eb-861727fb03ca)  
 
-# Later Updates
-Performance Update
-Ui Update
-# Changelog
-Beta 0.0.1:
-  Added Sand,Stone,Water,Fire,Wood,Glass,Steam,Lava,Coal,Air
-  Added Temperature System(Air is an Isolator) and a Density System.(eg: sand falls through water)
-  Added transformations, like sand turns into Glass and water boils.
-  Added KeyBinds
-  Space Pauses the sim
-  F Forwards the game by 1 tick
-  d is Debug
-  h is Heatview
-  scrolling changes the brush size
-  Lshift scrolling changes the Temperature
+# Later Updates  
+Performance Update  
+Ui Update  
+# Changelog  
+Beta 0.0.1:  
+  Added Sand,Stone,Water,Fire,Wood,Glass,Steam,Lava,Coal,Air  
+  Added Temperature System(Air is an Isolator) and a Density System.(eg: sand falls through water)  
+  Added transformations, like sand turns into Glass and water boils.  
+  Added KeyBinds  
+  Space             |Pauses the sim  
+  F                 |Forwards the game by 1 tick  
+  d                 |is Debug  
+  h                 |is Heatview  
+  scrolling         |changes the brush size  
+  Lshift scrolling  |changes the Temperature  
