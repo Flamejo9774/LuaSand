@@ -16,7 +16,7 @@ Coal  | Coal Can burn and is created by Wood(CharCoal)
 
 # Keybinds
 
-Space         | Pause the Sim
+Space         | Pause the Sim <br />
 F             | Manually Tick the Sim
 D             | Debug View
 H             | Heat View
