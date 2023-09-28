@@ -21,7 +21,8 @@ Space         | Pause the Sim
 F             | Manually Tick the Sim  
 D             | Debug View  
 H             | Heat View  
-1-9           | Elements  
+C             | Clear Grid  
+0-9           | Elements  
 LMB           | Create Elements  
 RMB           | Destroy Elements and Temperature in the air  
 Scroll        | Change the Brush Size  
