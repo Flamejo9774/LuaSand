@@ -41,9 +41,9 @@ It was the Lower one
 ![image](https://github.com/Flamejo9774/LuaSand/assets/88045266/c69de2ae-85b4-4ae0-a1eb-861727fb03ca)  
 
 # Later Updates  
-Performance Update  
-Ui Update  
 More Elements  
+Realistic Update
+Performance Update  
 # Changelog  
 Beta 0.0.1:  
   Added Sand,Stone,Water,Fire,Wood,Glass,Steam,Lava,Coal,Air  
@@ -56,3 +56,6 @@ Beta 0.0.1:
   h                 |is Heatview  
   scrolling         |changes the brush size  
   Lshift scrolling  |changes the Temperature  
+Beta 0.0.2:  
+  Added the Sidebar with all elements  
+  Added X and Y position to the debug view  
