@@ -16,15 +16,15 @@ Coal  | Coal Can burn and is created by Wood(CharCoal)
 
 # Keybinds
 
-Space         | Pause the Sim test
-F             | Manually Tick the Sim
-D             | Debug View
-H             | Heat View
-1-9           | Elements
-LMB           | Create Elements
-RMB           | Destroy Elements and Temperature in the air
-Scroll        | Change the Brush Size
-Lshift+Scroll | Change the Temperature of the Brush
+Space         | Pause the Sim <br />
+F             | Manually Tick the Sim <br />
+D             | Debug View <br />
+H             | Heat View <br />
+1-9           | Elements <br />
+LMB           | Create Elements <br />
+RMB           | Destroy Elements and Temperature in the air <br />
+Scroll        | Change the Brush Size <br />
+Lshift+Scroll | Change the Temperature of the Brush <br />
 
 # ScreenShots
 
