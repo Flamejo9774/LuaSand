@@ -1,11 +1,10 @@
 function love.load()
     love.window.setTitle("FallingSand by Enviction")
-    love.window.setMode(800,600)
+    love.window.setMode(1000,600)
     cellSize = 2
     selectedblock = 1
     paused = false
-    gridx,gridy = 0,0
-    gridx, gridy = love.window.getMode()
+    gridx, gridy = 800,600
     gridx =  gridx/ cellSize
     gridy = gridy/ cellSize
     brushSize = 1
@@ -49,6 +48,7 @@ function love.keypressed(key)
     if key == 'f' then logic() end
     if key == 'd' then debug = not debug end
     if key == 'h' then heatview = not heatview end
+    if key == 'c' then for x=0,gridx,1 do for y=0,gridy,1 do grid[x][y].type=0;grid[x][y].temp=0;grid[x][y].awake=0 end end end
 end
 
 function love.wheelmoved(x, y)
@@ -87,9 +87,11 @@ function love.update(dt)
         for i = cursorX, cursorX + brushSize - 1 do
             for j = cursorY, cursorY + brushSize - 1 do
                 if i >= 0 and i < gridx and j >= 0 and j < gridy then
-                    grid[i][j].type = selectedblock
-                    grid[i][j].awake = 1
-                    grid[i][j].temp = Tempplace
+                    if mx <= gridx*cellSize then
+                        grid[i][j].type = selectedblock
+                        grid[i][j].awake = 1
+                        grid[i][j].temp = Tempplace
+                    end
                 end
             end
         end
@@ -100,9 +102,11 @@ function love.update(dt)
                 for j = 0, brushSize - 1 do
                     local bx, by = math.floor((mx + i * cellSize) / cellSize), math.floor((my + j * cellSize) / cellSize)
                     if bx >= 0 and bx < gridx and by >= 0 and by < gridy then
-                        grid[bx][by].type = 0
-                        grid[bx][by].awake = 1
-                        grid[bx][by].temp = 0
+                        if mx <= gridx*cellSize then
+                            grid[bx][by].type = 0
+                            grid[bx][by].awake = 1
+                            grid[bx][by].temp = 0
+                        end
                     end
                 end
             end
@@ -158,9 +162,10 @@ function logic()
                 grid[x][y].type = 0
                 grid[x][y].awake = 0
             end
-            if y == 0 then
+            if y == 0 or x > ((gridx*cellSize)/2)-1 then
                 grid[x][y].type = 0
                 grid[x][y].awake = 0
+                grid[x][y].temp = 0
             end
             heatdistro(x,y,5)
             heatdistro(x,y,15)
@@ -187,6 +192,7 @@ function logic()
                     if miv(x,y,0,dy,0,3,love.math.random(0,2),1) then
                     else 
                         if x == 0 then dx = 1 end
+                        if x == (gridx-cellSize)*cellSize then dx = -1 end
                         if miv(x,y,dx,dy,0,3,rand,1) then 
                         else
                             dx = 0-dx
@@ -232,6 +238,7 @@ function logic()
                     if miv(x,y,0,dy,0,0,1,1) then
                     else
                         if x == 0 then dx = 1 end
+                        if x == gridx*cellSize then dx = -1 end
                         if miv(x,y,dx,dy,0,0,1,1) then
                         else
                             dx = 0-dx
@@ -266,6 +273,7 @@ function logic()
                     end
                     if miv(x,y,0,dy,0,0,1,1) then end
                     if x == 0 then dx = 1 end
+                    if x == gridx*cellSize then dx = -1 end
                     if miv(x,y,dx,dy,0,0,1,1) then
                     else
                         dx = 0-dx
@@ -320,6 +328,7 @@ function logic()
                     end
                     if miv(x,y,0,dy,0,3,1,1) then end
                     if x == 0 then dx = 1 end
+                    if x == gridx*cellSize then dx = -1 end
                     if miv(x,y,dx,dy,0,3,1,1) then
                     else
                         dx = 0-dx
@@ -345,6 +354,7 @@ function logic()
                         if miv(x,y,0,dy,0,0,1,1) then
                         else
                             if x == 0 then dx = 1 end
+                            if x == gridx*cellSize then dx = -1 end
                             if miv(x,y,dx,dy,0,0,1,1) then
                             else
                                 dx = 0-dx
@@ -476,38 +486,50 @@ function love.draw()
             end
         end
     end
-
-    debugtext()
     love.graphics.setColor(0.5, 0.5, 0.5, 0.5)
-    love.graphics.rectangle("fill", cursorX+cursorWidth, cursorY+cursorHeight, cursorWidth, cursorHeight)
+    if cursorWidth+cursorX < gridx*cellSize then
+        love.graphics.rectangle("fill", cursorX+cursorWidth, cursorY+cursorHeight, cursorWidth, cursorHeight)
+    end
+    local rybn = 0
+    for ybn = 0,320,40 do
+        newbutton(199,40,802,ybn+rybn,names[(ybn+40)/40],(ybn+40)/40)
+    end
+    debugtext()
 end
 
 
 function debugtext()
-    if mx and my then
-        local msx = math.floor(mx / cellSize)
-        local msy = math.floor(my / cellSize)
-        for i = msx, msx, - 1 do
-            for j = msy, msy, - 1 do
-                data = {
-                    temp = grid[i][j].temp,
-                    blockk = grid[i][j].type,
-                }
+        if mx and my then
+            if mx < gridx*cellSize then
+                local msx = math.floor(mx / cellSize)
+                local msy = math.floor(my / cellSize)
+                for i = msx, msx, - 1 do
+                    for j = msy, msy, - 1 do
+                        data = {
+                            temp = grid[i][j].temp,
+                            blockk = grid[i][j].type,
+                        }
+                    end
+                end
             end
         end
-    end
-    if debug then
-        love.graphics.setColor(1,1,1)
-        love.graphics.print("Block:",            10,15      )
-        love.graphics.print(names[selectedblock],50,15      )
-        love.graphics.print("Temp:",             10,35      )
-        love.graphics.print(Tempplace,           50,35      )
-
-        love.graphics.print("Block:",            mx+10,my   )
-        love.graphics.print(names[data.blockk],   mx+50,my   )
-        love.graphics.print("Temp:",             mx+10,my+15)
-        love.graphics.print(data.temp,           mx+50,my+15)
-    end
+        if debug then
+            love.graphics.setColor(1,1,1)
+            love.graphics.print("Block:",            10,15      )
+            love.graphics.print(names[selectedblock],50,15      )
+            love.graphics.print("Temp:",             10,35      )
+            love.graphics.print(Tempplace,           50,35      )
+            if mx < gridx*cellSize then
+                love.graphics.print("Block:",            mx+10,my   )
+                love.graphics.print(names[data.blockk],   mx+50,my   )
+                love.graphics.print("Temp:",             mx+10,my+15)
+                love.graphics.print(data.temp,           mx+50,my+15)
+                love.graphics.print("X:",             mx+10,my+30)
+                love.graphics.print(mx,           mx+50,my+30)
+                love.graphics.print("Y:",             mx+10,my+45)
+                love.graphics.print(my,           mx+50,my+45)
+            end
+        end
 end
 
 
@@ -532,4 +554,41 @@ end
 function ismousedown(button)
     mx, my = love.mouse.getPosition()
     return love.mouse.isDown(button) and mx, my
+end
+
+
+function newbutton(BW,BH,BX,BY,text,var)
+    button = 1
+    if mx and my then
+        if mx < BX+BW and mx > BX and my < BY+BH and my > BY then             
+            button = 1
+        else
+            button = 0
+        end
+    else
+        button = 0
+    end
+    if button == 1 then
+        love.graphics.setColor(0.7,0.7,0.7)
+        love.graphics.rectangle("fill",BX,BY,BW,BH)
+        love.graphics.setColor(0.2,0.2,0.2)
+        love.graphics.print(text,BX+(BW/2.5),BY+(BH/3))
+    else
+        love.graphics.setColor(0.5,0.5,0.5)
+        love.graphics.rectangle("fill",BX,BY,BW,BH)
+        love.graphics.setColor(1,1,1)
+        love.graphics.print(text,BX+(BW/3),BY+(BH/3))
+    end
+    
+    if mx and my then
+        if mx < BX+BW and mx > BX and my < BY+BH and my > BY then
+            if love.mouse.isDown(1) then
+                selectedblock = var
+                love.graphics.setColor(0.8,0.8,0.8)
+                love.graphics.rectangle("fill",BX,BY,BW,BH)
+                love.graphics.setColor(0.2,0.2,0.2)
+                love.graphics.print(text,BX+(BW/2.5),BY+(BH/3))
+            end
+        end
+    end
 end
