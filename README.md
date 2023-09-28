@@ -43,6 +43,7 @@ It was the Lower one
 # Later Updates  
 Performance Update  
 Ui Update  
+More Elements  
 # Changelog  
 Beta 0.0.1:  
   Added Sand,Stone,Water,Fire,Wood,Glass,Steam,Lava,Coal,Air  
