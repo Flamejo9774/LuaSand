@@ -1,5 +1,5 @@
 # LuaSand
-a Falling Sand Game using Lua and Löve2d
+a Falling Sand Game using Lua and Löve2d.
 
 # Blocks
 Sand  | Sand can fall LeftDown,RightDown and down at a random speed it also sinks and is more sticky in water
